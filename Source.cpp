@@ -21,19 +21,17 @@ int count_words(const string& str) {
 
     for (char c : str) {
         if (c == ' ' || c == '\t' || c == '\n') {
-            // If whitespace is encountered and we are in a word, it means the word has ended
+    
             if (inWord) {
                 count++;
                 inWord = false;
             }
         }
         else {
-            // If a non-whitespace character is encountered, we are in a word
             inWord = true;
         }
     }
 
-    // Check if the last word didn't end with whitespace
     if (inWord) {
         count++;
     }
